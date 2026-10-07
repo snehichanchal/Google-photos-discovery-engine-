@@ -1,0 +1,26 @@
+# Full pipeline + application dependencies.
+# Pin exact versions once a build succeeds; chromadb MUST stay recent
+# (indexing/chroma_db/ uses the 1.x schema format and older versions cannot open it).
+
+# CPU-only torch. The default PyPI wheel bundles CUDA (~2.5GB of nvidia-* deps)
+# and overruns Streamlit Community Cloud's build limits. PEP 440 sorts the "+cpu"
+# local version above the plain one, so pip prefers this index for torch.
+--extra-index-url https://download.pytorch.org/whl/cpu
+torch
+
+# --- Application layer (app/) ---
+streamlit
+plotly
+pandas
+
+# --- RAG engine (rag_engine/) ---
+sentence-transformers        # embedder (all-MiniLM-L6-v2) + cross-encoder reranker
+google-generativeai          # optional: without GEMINI_API_KEY synthesis falls back
+
+# --- Indexing layer (indexing/) ---
+chromadb>=1.0
+rank-bm25
+numpy
+
+# --- Data processing (data_processing/) ---
+python-dateutil

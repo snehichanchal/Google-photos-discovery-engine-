@@ -21,6 +21,18 @@ st.set_page_config(
     initial_sidebar_state="collapsed"
 )
 
+# ── Secrets bridge ────────────────────────────────────────────────────────────
+# Streamlit Cloud supplies secrets via st.secrets, but LLMSynthesizer and
+# taxonomy_engine both read os.environ. Without this the app silently runs in
+# "deterministic_fallback" synthesis mode, which looks like it works.
+for _key in ("GEMINI_API_KEY", "GOOGLE_API_KEY"):
+    if not os.environ.get(_key):
+        try:
+            if _key in st.secrets:
+                os.environ[_key] = str(st.secrets[_key])
+        except Exception:
+            pass  # no secrets configured (e.g. local run without secrets.toml)
+
 # Initialize RAG Engine
 @st.cache_resource
 def get_console():
