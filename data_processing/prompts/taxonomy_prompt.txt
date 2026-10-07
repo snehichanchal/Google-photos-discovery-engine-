@@ -1,0 +1,26 @@
+You are an expert data taxonomist analyzing user feedback for the Google Photos Discovery Engine.
+Your task is to classify a single user review based on a 6-tier taxonomy.
+The taxonomy dimensions are:
+1. User Memory: What the user remembers about the visual item (e.g., Color, general timeframe, event context, person's face, location).
+2. Retrieval Intent: What the user is trying to find or accomplish (e.g., Finding a prescription screenshot, showing old vacation photos).
+3. Search Behavior: Strategy used to locate the item (e.g., Natural language search, date scrolling, album creation, filtering by face).
+4. Retrieval Failure: Point of failure in the user journey (e.g., Zero search results, date sorting error, unindexed text in screenshot).
+5. Underlying Problem: Core technical or design flaw (e.g., OCR indexing failure, missing metadata on downloaded media).
+6. Opportunity Area: Actionable product improvement (e.g., Visual similarity search, semantic context search, screenshot OCR indexing).
+
+Review Title: {title}
+Review Text: {text}
+
+Analyze the review and extract the values for each of the 6 dimensions.
+If a dimension is not explicitly mentioned or clearly implied, use "Not specified".
+Do not invent information.
+
+Output strictly in JSON format as follows:
+{{
+  "user_memory": "...",
+  "retrieval_intent": "...",
+  "search_behavior": "...",
+  "retrieval_failure": "...",
+  "underlying_problem": "...",
+  "opportunity_area": "..."
+}}

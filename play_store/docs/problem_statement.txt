@@ -1,0 +1,38 @@
+## Problem Statement
+
+Google Photos users accumulate thousands of photos, videos, screenshots, documents, and other visual memories over years. While conventional search works well when users know specific details such as a person, location, date, or keyword, retrieval becomes significantly harder when users remember a visual memory only partially.
+
+For example, a user may remember *“the small café we visited during our Goa trip”* or *“the photo of the medicine I took when I was sick last year”*, while forgetting the exact date, location, album, filename, or words that appear in the image.
+
+The core problem is therefore not simply **searching for photos**, but **retrieving a known visual memory from incomplete, ambiguous, or imperfect human memory**.
+
+Google Photos currently has a large volume of user-generated feedback and conversations across sources such as Google Play Store, Apple App Store, Reddit, Google Photos Help Community, social media, YouTube comments, and online forums. However, these conversations are fragmented and difficult to analyze systematically. There is an opportunity to use AI to understand these real-world retrieval difficulties at scale.
+
+### Problem to Solve
+
+Build a lightweight **AI-powered Retrieval Discovery Engine** that analyzes publicly available user feedback and conversations to identify and compare the different ways people struggle to retrieve old visual memories from Google Photos.
+
+The system should go beyond sentiment analysis or simple review summarization. It should identify the **underlying retrieval problem, the user's remembered information, the information they have forgotten, the search behavior they use, and the point at which retrieval breaks down**.
+
+The engine should answer questions such as:
+
+* What types of old photos, videos, screenshots, or documents are hardest for users to retrieve?
+* What information do users typically remember about a visual memory?
+* What information do users commonly forget?
+* How do users describe or search for something when they cannot remember precise details?
+* What search strategies and workarounds do users currently use?
+* Where do these retrieval attempts fail?
+* Which retrieval problems occur repeatedly across different user conversations?
+* Which user problems represent meaningful opportunities for improving Google Photos' retrieval experience?
+
+### Desired Outcome
+
+Create a curated, source-backed corpus and a lightweight **RAG-based AI assistant** that enables internal teams such as Product Managers, leadership, UX researchers, and data/analytics teams to ask questions about Google Photos retrieval behavior and receive concise answers grounded in evidence from real users.
+
+The system should transform fragmented user conversations into structured insights about:
+
+**User memory → Retrieval intent → Search behavior → Retrieval failure → Underlying problem → Opportunity area**
+
+The ultimate goal is to help the Core Experience team identify evidence-backed opportunities to increase the percentage of users who successfully retrieve a photo they remember but cannot precisely describe when they begin searching.
+
+This version is suitable as the **main problem statement for your AI/RAG project**. It clearly separates the problem from the eventual solution, which is important for a Product Manager case study.
